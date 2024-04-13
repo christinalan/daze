@@ -23,10 +23,6 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       <nav className="fixed pt-8 px-4 lg:px-8">
         <Audio />
-          {/* <Image
-                    src={toggle}
-                    alt="toggle icon"
-                  /> */}
        </nav>
     <div className="flex flex-col items-center self-center my-auto mx-auto justify-center">
     <div className="z-10 flex flex-col items-center w-full max-w-md sm:w-9/12 lg:w-9/12 sm:max-w-xl">
