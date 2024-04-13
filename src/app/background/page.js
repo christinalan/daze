@@ -21,14 +21,17 @@ const Cloud = () => {
     const fragmentShader = 
     `
     uniform sampler2D map;
-    
     uniform vec3 fogColor;
     uniform float fogNear;
     uniform float fogFar;
-    
+    uniform float time;
+    uniform float variability;
+
     varying vec2 vUv;
     
     void main() {
+        vec2 uv = vUv;
+        uv.y += time * 0.08 * variability; // texture scrolls horizontally over time
         
         float depth = gl_FragCoord.z / gl_FragCoord.w;
         float fogFactor = smoothstep( fogNear, fogFar, depth );
@@ -54,11 +57,15 @@ const Cloud = () => {
     
     const fogTex = new THREE.Fog(0x4584b4, -500, 2000);
 
+    const variability = Math.random(); 
+    
     const uniforms = {
         map: { type: "t", value: texture },
         fogColor: { type: "c", value: new THREE.Color(fogTex.color)},
         fogNear: { type: "f", value: fogTex.near },
         fogFar: { type: "f", value: fogTex.far },
+        time: { type: "f", value: 0.0 }, 
+        variability: { type: "f", value: variability },
     }
 
     // Adjustments to position, rotation, and scale
@@ -70,7 +77,7 @@ const Cloud = () => {
         const windowHalfX = window.innerWidth / 2;
         const windowHalfY = window.innerHeight / 2;
         mouseX.current = (e.clientX - windowHalfX) * 0.015;;
-        mouseY.current = (e.clientY - windowHalfY) * 0.004;
+        mouseY.current = (e.clientY - windowHalfY) * 0.03;
       }, []);
 
 
@@ -90,6 +97,9 @@ const Cloud = () => {
         meshRef.current.rotation.set(...rotation);
         meshRef.current.scale.set(...scale);
 
+        uniforms.time.value = clock.getElapsedTime();
+
+        
         //update the camera position with its ref
         const start_time = clock.getElapsedTime()
         const timePos = ((clock.getElapsedTime() - (start_time / 2)) * 0.01) % 8000
@@ -97,17 +107,16 @@ const Cloud = () => {
         const deltaZ = Math.sin(timePos) * 0.00005;
 
         // //update the camera position ? 
-        // state.camera.position.z += Math.sin(timePos) * 0.01
+        // state.camera.position.z += Math.sin(timePos) * 0.05
         state.camera.position.x -= Math.min(Math.max(deltaZ, -0.0005), 0.0005);
         state.camera.position.y += (-mouseY.current - state.camera.position.y) * 0.001;
-        // state.camera.position.x += (mouseX.current - state.camera.position.x) * 0.001
 
         
     });
 
     return (
         <mesh ref={meshRef}>
-            <planeGeometry args={[50, 50]}/>
+            <planeGeometry args={[100, 100]}/>
             <shaderMaterial 
                 uniforms={uniforms}
                 fragmentShader={fragmentShader}
