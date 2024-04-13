@@ -18,6 +18,7 @@ export const Audio = () => {
         soundRef.current = new Howl({
             src: ['daze_ambient_score.mp3']
         });
+        soundRef.current.loop = true;
     }, []); 
 
     // const sound = new Howl({

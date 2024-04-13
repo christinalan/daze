@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local"
 import Background from '../app/background/page';
 
 const inter = Inter({ subsets: ["latin"] });
+const circularMedium = localFont({
+  src: '../fonts/CircularXXTT-Medium.ttf',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Daze",
@@ -17,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={circularMedium.className}>
         {/* <Background /> */}
         {children}
         </body>

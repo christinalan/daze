@@ -28,20 +28,22 @@ export default function Home() {
                     alt="toggle icon"
                   /> */}
        </nav>
-    <div className="flex flex-col items-center self-center justify-start">
-    <div className="z-10 w-9/12 sm:w-9/12 lg:w-9/12 px-28 lg:py-8 md:py-14 py-16 max-w-xl">
+    <div className="flex flex-col items-center self-center my-auto mx-auto justify-center">
+    <div className="z-10 flex flex-col items-center w-full max-w-md sm:w-9/12 lg:w-9/12 sm:max-w-xl">
       <Image
                 src={caption}
+                width={200}
                 alt="caption cloud"
               />
       <Image
                 src={daze}
+                width={400}
                 alt="Picture of Daze logo"
               />
       </div>
 
 
-      <div className="z-10 flex flex-col gap-5 justify-between" >
+      <div className="z-10 flex flex-col gap-5 justify-between mt-5" >
         <Link href="https://st4slyblfx3.typeform.com/to/DK30NHwZ"> 
             <div className="bg-[#4E7BC9] text-slate-100 bg-opacity-30 px-12 py-3 rounded-3xl shadow-xl flex justify-center cursor-pointer">
                 <p className="text-slate-100">Get on the waitlist</p>
