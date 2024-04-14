@@ -16,8 +16,10 @@ export const Audio = () => {
 
     useEffect(() => {
         soundRef.current = new Howl({
-            src: ['daze_ambient_score.mp3']
+            src: ['daze_ambient_score.mp3'],
+            html5: true
         });
+        
         soundRef.current.loop = true;
     }, []); 
 

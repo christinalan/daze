@@ -107,7 +107,8 @@ export default function Home() {
       <video 
             autoPlay
             playsInline
-            muted
+            controls={false}
+            muted={true}
             preload="auto"
             loop
             placeholder="blur"
