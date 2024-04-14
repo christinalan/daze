@@ -4,7 +4,6 @@ import "./globals.css";
 import localFont from "next/font/local"
 import Background from '../app/background/page';
 
-const inter = Inter({ subsets: ["latin"] });
 const circularMedium = localFont({
   src: '../fonts/CircularXXTT-Medium.ttf',
   display: 'swap',

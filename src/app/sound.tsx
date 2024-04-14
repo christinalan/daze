@@ -2,8 +2,8 @@
 import {Howl} from 'howler'
 import Image from "next/image";
 import {useState, useEffect, useRef} from "react"
-import toggleOff from "../images/music_off.png"
-import toggleOn from "../images/music_on.png"
+import toggleOff from "../images/music_off.svg"
+import toggleOn from "../images/music_on.svg"
 
 interface Track {
     file: string;
@@ -45,10 +45,22 @@ export const Audio = () => {
         <Image
             src={toggleOff}
             alt="toggle off icon"
+            sizes="100vw"
+            style={{
+                objectFit: 'contain',
+            }}
+            width={40}
+            height={40}
             /> : 
         <Image
             src={toggleOn}
             alt="toggle on icon"
+            sizes="100vw"
+            style={{
+                objectFit: 'contain',
+            }}
+            width={40}
+            height={40}
             />
         }
     </span>
