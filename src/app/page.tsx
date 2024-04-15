@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from 'next/link'
-import caption from "../images/caption.png"
-import daze from "../images/daze.png";
-import button1 from '../images/button1.png'
-import button2 from '../images/button2.png'
-import button3 from '../images/button3.png'
+import caption from "../images/caption.webp"
+import daze from "../images/daze.webp";
+import button1 from '../images/button1.webp'
+import button2 from '../images/button2.webp'
+import button3 from '../images/button3.webp'
 import { Audio } from './sound'
 
 export default function Home() {
@@ -95,7 +95,7 @@ export default function Home() {
             placeholder="blur"
             poster="poster-min.png"
             className="fixed object-cover w-full h-full">
-            <source src="video.webm" type="video/mp4"/>
+            <source src="video.mp4" type="video/mp4"/>
 
       Your browser does not support the video tag.
       </video>
