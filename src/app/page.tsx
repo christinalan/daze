@@ -26,7 +26,15 @@ export default function Home() {
       }
     }
     window.addEventListener("load", handleLoading);
-    return () => window.removeEventListener('load', handleLoading);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => {
+      window.removeEventListener('load', handleLoading);
+      clearTimeout(timer);
+    }
   }, [isLoading, loaded])
 
   const onTransitionEnd = () => {
@@ -36,15 +44,11 @@ export default function Home() {
       loadingScreen.classList.add("fade-out");
       loadingScreen.style.display = 'none';
     }
-    // loadingScreen.addEventListener("transitionend", onTransitionEnd);
-
   }
 
   return (
     <main className="flex min-h-screen flex-col">
-
-      {/* <Load /> */}
-          <div>
+      <div>
         {/* For the sound toggle */}
           <nav className="fixed pt-8 px-4 ml-2 lg:px-8">
             <Audio />
@@ -57,6 +61,7 @@ export default function Home() {
                 src={caption}
                 width={120}
                 height={120}
+                priority={true}
                 alt="caption cloud"
                 className="my-0 py-0"
               />
@@ -64,6 +69,7 @@ export default function Home() {
                 src={daze}
                 width={155}
                 height={155}
+                priority={true}
                 alt="Picture of Daze logo"
                 className="my-0 py-0"
               />
@@ -81,6 +87,7 @@ export default function Home() {
                 width={315}
                 style={{mixBlendMode: 'soft-light'}}
                 alt="button 1"
+                priority={true}
                 className="my-0 py-0 mix-blend-overlay opacity-65"
               />
         </div>
@@ -97,6 +104,7 @@ export default function Home() {
               width={315}
               style={{mixBlendMode: 'soft-light'}}
               alt="button 1"
+              priority={true}
               className="my-0 py-0 opacity-65"
             />
             {/* <div className="bg-[#4E7BC9] text-slate-100 bg-opacity-60 px-12 py-3 rounded-3xl shadow-lg flex justify-center cursor-pointer">
@@ -112,6 +120,7 @@ export default function Home() {
                 width={310}
                 style={{mixBlendMode: 'soft-light'}}
                 alt="button 1"
+                priority={true}
                 className="my-0 py-0 mix-blend-soft-light opacity-70"
               />
           </div>
@@ -121,13 +130,13 @@ export default function Home() {
       </div>
         
     </div>
-
-    {isLoading && (
-            <section id="loading-screen" className="visible" onTransitionEnd={onTransitionEnd}>
-                <div id="loader"></div>
-            </section>
-        )}
    <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
+    {isLoading && (
+      <section id="loading-screen" className="visible" onTransitionEnd={onTransitionEnd}>
+      <div id="loader"></div>
+      </section>
+    )}
+      {/* <Load /> */}
       <video 
             autoPlay
             playsInline
@@ -148,27 +157,3 @@ export default function Home() {
   );
 }
 
-
-  // const cloudImages = [camel, flamingo, person, starfish]
-
-  // const getRandomImage = () => {
-  //   const randomIndex = Math.floor(Math.random() * cloudImages.length)
-  //   return cloudImages[randomIndex]
-  // }
-
-  // const randomImageSrc = getRandomImage();
-  // const randomImageSrc2 = getRandomImage();
-
-  {/* <div className="fixed inset-y-3/4 lg:px-12 lg:mb-24 inset-x-1/4 w-48 lg:w-96">
-    <Image
-        src={randomImageSrc}
-        alt="Random Image"
-  />
-    </div>
-
-  <div className="fixed inset-y-1/2 inset-x-1/2 lg:ml-12 w-24 lg:w-80">
-    <Image
-        src={randomImageSrc2}
-        alt="Random Image"
-  />
-    </div> */}

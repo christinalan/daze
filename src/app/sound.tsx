@@ -1,7 +1,7 @@
 'use client' 
 import {Howl} from 'howler'
 import Image from "next/image";
-import {useState, useEffect, useRef} from "react"
+import {useState, useEffect, useRef, Suspense} from "react"
 import toggleOff from "../images/music_off.svg"
 import toggleOn from "../images/music_on.svg"
 
@@ -50,6 +50,7 @@ export const Audio = () => {
 
     return (
     <div>
+        <Suspense fallback={<h1>...</h1>}>
         {loaded && (
             <span id="playbutton" onClick={toggleAndHandlePlayback} className="cursor-pointer">
             {!isPlaying ?  
@@ -71,7 +72,7 @@ export const Audio = () => {
             }
         </span>
         )}
-        
+        </Suspense>
         </div>
 
     )

@@ -17,13 +17,14 @@ export const Load = () => {
       }
       window.addEventListener("load", handleLoading);
       return () => window.removeEventListener('load', handleLoading);
-    }, [])
+    }, [isLoading, loaded])
   
     const onTransitionEnd = () => {
       const loadingScreen = document.getElementById("loading-screen") as HTMLElement;
-      loadingScreen.classList.add("fade-out");
-      loadingScreen.addEventListener("transitionend", onTransitionEnd);
-  
+      if (!isLoading) {
+        loadingScreen.classList.add("fade-out");
+        loadingScreen.style.display = 'none';
+      }
     }
 
     return (
