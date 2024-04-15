@@ -15,6 +15,7 @@ import './style/style.scss'
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [loaded, setLoaded] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const containerId = "container"
 
   useEffect(() => {
@@ -47,9 +48,12 @@ export default function Home() {
     }
   }
 
-
+  const handleMainClick = () => {
+    // console.log("Main container was clicked");
+    setClicked(true);
+};
   return (
-    <main id={containerId} className="flex min-h-screen flex-col">
+    <main id={containerId} onClick={handleMainClick} className="flex min-h-screen flex-col">
       <div >
         {/* For the sound toggle */}
           <nav className="fixed pt-8 px-4 ml-2 lg:px-8">
@@ -136,7 +140,7 @@ export default function Home() {
     )}
       {/* <Load /> */}
     
-        <Video containerId={containerId}/>
+        <Video containerId={containerId} homeClicked={clicked}/>
        </div>
 
       </div>

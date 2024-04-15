@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 19, 64, 141;

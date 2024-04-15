@@ -2,7 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 
 interface VideoProps {
-    containerId: string;  // ID of the container where listeners should be attached
+    containerId: string; 
+    homeClicked: boolean
 }
 
 const useVideoPlayer = (videoRef: any) => {
@@ -14,7 +15,7 @@ const useVideoPlayer = (videoRef: any) => {
 return { isPlaying };
 }
 
-export const Video: React.FC<VideoProps> = ({containerId}) => {
+export const Video: React.FC<VideoProps> = ({containerId, homeClicked}) => {
     const videoRef = useRef<HTMLInputElement | any>();
     const { isPlaying } = useVideoPlayer(videoRef);
     const [playing, setPlaying] = useState(false);
@@ -29,16 +30,14 @@ export const Video: React.FC<VideoProps> = ({containerId}) => {
             setPlaying(isPlayingNow);
         
         };
-        // const container = document.getElementById(containerId);
-        // document.addEventListener('click touchstart', playVideo)
-        // document.addEventListener('suspend', playVideo);
-
-
         checkPlayback();
 
+        setTimeout(() => {
+            video.play();
+        }, 0)
         // const interval = setInterval(checkPlayback, 2000);
         // return () => clearInterval(interval);
-    }, []);
+    }, [homeClicked]);
 
 
     const playVideo = () => {
@@ -60,7 +59,7 @@ export const Video: React.FC<VideoProps> = ({containerId}) => {
             onClick={playVideo}
             onTouchStart={playVideo}
             ref={videoRef} 
-            autoPlay
+            // autoPlay
             playsInline
             controls={false}
             muted={true}
