@@ -12,20 +12,20 @@ interface Track {
 
 export const Audio = () => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [loaded, setLoaded] = useState(false);
     const soundRef = useRef<Howl | any>();
 
     useEffect(() => {
         soundRef.current = new Howl({
             src: ['daze_ambient_score.mp3'],
-            html5: true
+            html5: true,
+            onload: () => setLoaded(true),
+            loop: true
         });
         
         soundRef.current.loop = true;
     }, []); 
 
-    // const sound = new Howl({
-    //     src: ['daze_ambient_score.mp3']
-    // });
 
     const toggleAndHandlePlayback = () => {
         const newIsPlaying = !isPlaying;
@@ -42,30 +42,33 @@ export const Audio = () => {
 
     return (
     <div>
-        <span id="playbutton" onClick={toggleAndHandlePlayback} className="cursor-pointer">
-        {!isPlaying ?  
-        <Image
-            src={toggleOff}
-            alt="toggle off icon"
-            sizes="100vw"
-            style={{
-                objectFit: 'contain',
-            }}
-            width={40}
-            height={40}
-            /> : 
-        <Image
-            src={toggleOn}
-            alt="toggle on icon"
-            sizes="100vw"
-            style={{
-                objectFit: 'contain',
-            }}
-            width={40}
-            height={40}
-            />
-        }
-    </span>
+        {loaded && (
+            <span id="playbutton" onClick={toggleAndHandlePlayback} className="cursor-pointer">
+            {!isPlaying ?  
+            <Image
+                src={toggleOff}
+                alt="toggle off icon"
+                sizes="100vw"
+                style={{
+                    objectFit: 'contain',
+                }}
+                width={40}
+                height={40}
+                /> : 
+            <Image
+                src={toggleOn}
+                alt="toggle on icon"
+                sizes="100vw"
+                style={{
+                    objectFit: 'contain',
+                }}
+                width={40}
+                height={40}
+                />
+            }
+        </span>
+        )}
+        
         </div>
 
     )
