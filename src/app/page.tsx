@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from "next/image";
 import Link from 'next/link'
 import caption from "../images/caption.webp"
@@ -9,12 +9,14 @@ import button2 from '../images/button2.webp'
 import button3 from '../images/button3.webp'
 import { Audio } from './sound'
 // import {Load } from './load'
+import { Video } from './video'
 import './style/style.scss'
 
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [loaded, setLoaded] = useState(false);
+  const containerId = "container"
 
   useEffect(() => {
     //to check if all assets on the page are loaded
@@ -46,9 +48,10 @@ export default function Home() {
     }
   }
 
+
   return (
     <main className="flex min-h-screen flex-col">
-      <div>
+      <div id={containerId}>
         {/* For the sound toggle */}
           <nav className="fixed pt-8 px-4 ml-2 lg:px-8">
             <Audio />
@@ -91,8 +94,6 @@ export default function Home() {
                 className="my-0 py-0 mix-blend-overlay opacity-65"
               />
         </div>
-            {/* <div className="bg-[#4E7BC9] text-slate-100 bg-opacity-60 px-12 py-3 rounded-3xl shadow-lg shadow-inner flex justify-center cursor-pointer">
-            </div> */}
         </Link>
         <Link href="https://www.instagram.com/daze.chat/">
           
@@ -107,8 +108,6 @@ export default function Home() {
               priority={true}
               className="my-0 py-0 opacity-65"
             />
-            {/* <div className="bg-[#4E7BC9] text-slate-100 bg-opacity-60 px-12 py-3 rounded-3xl shadow-lg flex justify-center cursor-pointer">
-            </div> */}
         </div>
         </Link> 
         <Link href="https://discord.gg/s4Bb2dDr">
@@ -137,7 +136,18 @@ export default function Home() {
       </section>
     )}
       {/* <Load /> */}
-      <video 
+    
+        <Video containerId={containerId}/>
+       </div>
+
+      </div>
+  </main>
+  );
+}
+
+
+
+{/* <video 
             autoPlay
             playsInline
             controls={false}
@@ -149,11 +159,4 @@ export default function Home() {
             <source src="video.mp4" type="video/mp4"/>
 
       Your browser does not support the video tag.
-        </video>
-       </div>
-
-      </div>
-  </main>
-  );
-}
-
+        </video> */}
