@@ -8,7 +8,6 @@ import button1 from '../images/button1.webp'
 import button2 from '../images/button2.webp'
 import button3 from '../images/button3.webp'
 import { Audio } from './sound'
-// import {Load } from './load'
 import { Video } from './video'
 import './style/style.scss'
 
@@ -50,8 +49,8 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col">
-      <div id={containerId}>
+    <main id={containerId} className="flex min-h-screen flex-col">
+      <div >
         {/* For the sound toggle */}
           <nav className="fixed pt-8 px-4 ml-2 lg:px-8">
             <Audio />

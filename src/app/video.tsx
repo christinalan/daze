@@ -29,29 +29,37 @@ export const Video: React.FC<VideoProps> = ({containerId}) => {
             setPlaying(isPlayingNow);
         
         };
+        // const container = document.getElementById(containerId);
+        // document.addEventListener('click touchstart', playVideo)
+        // document.addEventListener('suspend', playVideo);
 
-        const playVideo = () => {
-            if (playing) {
-
-            } else {
-                video.play();
-            }
-        }
-        const container = document.getElementById(containerId);
-        if (container) {
-            container.addEventListener('click touchstart', playVideo)
-        }
 
         checkPlayback();
-        // Check periodically if the video is playing
+
         // const interval = setInterval(checkPlayback, 2000);
         // return () => clearInterval(interval);
     }, []);
 
 
+    const playVideo = () => {
+        const video = videoRef.current;
+        if (playing) {
+            console.log("video is playing");
+
+        } else {
+            video.play();
+            console.log("video will play with interaction")
+        }
+    }
+
+
     return (
-        <>
-            <video ref={videoRef} 
+        <>            
+            <video 
+            id={containerId}
+            onClick={playVideo}
+            onTouchStart={playVideo}
+            ref={videoRef} 
             autoPlay
             playsInline
             controls={false}
@@ -64,6 +72,7 @@ export const Video: React.FC<VideoProps> = ({containerId}) => {
 
             Your browser does not support the video tag.
             </video>
+
         </>
     );
 }
