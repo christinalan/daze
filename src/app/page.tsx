@@ -5,7 +5,6 @@ import daze from "../images/daze.png";
 import button1 from '../images/button1.png'
 import button2 from '../images/button2.png'
 import button3 from '../images/button3.png'
-// import gif from "../images/video_1.gif"
 import { Audio } from './sound'
 
 export default function Home() {
@@ -86,16 +85,6 @@ export default function Home() {
     </div>
 
    <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
-      {/* <Image 
-                unoptimized
-                src={gif}
-                alt="cloud background"
-                sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                }}
-          /> */}
       
       <video 
             autoPlay
