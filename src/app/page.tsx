@@ -1,3 +1,5 @@
+'use client'
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Link from 'next/link'
 import caption from "../images/caption.webp"
@@ -6,34 +8,70 @@ import button1 from '../images/button1.webp'
 import button2 from '../images/button2.webp'
 import button3 from '../images/button3.webp'
 import { Audio } from './sound'
+// import {Load } from './load'
+import './style/style.scss'
+
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    //to check if all assets on the page are loaded
+    const handleLoading = () => {
+      if (document.readyState === "complete") {
+          console.log('completely loaded assets')
+        setIsLoading(false);
+        setLoaded(true);
+      }
+    }
+    window.addEventListener("load", handleLoading);
+    return () => window.removeEventListener('load', handleLoading);
+  }, [isLoading, loaded])
+
+  const onTransitionEnd = () => {
+    console.log("Transition ended");
+    const loadingScreen = document.getElementById("loading-screen") as HTMLElement;
+    if (!isLoading) {
+      loadingScreen.classList.add("fade-out");
+      loadingScreen.style.display = 'none';
+    }
+    // loadingScreen.addEventListener("transitionend", onTransitionEnd);
+
+  }
 
   return (
     <main className="flex min-h-screen flex-col">
-      <nav className="fixed pt-8 px-4 ml-2 lg:px-8">
-        <Audio />
-       </nav>
-    <div className="flex flex-col items-center self-center mt-24 mx-auto justify-center">
-    <div className="z-10 flex flex-col items-center -space-y-4 w-full max-w-md sm:w-9/12 lg:w-9/12 sm:max-w-xl">
+
+      {/* <Load /> */}
+          <div>
+        {/* For the sound toggle */}
+          <nav className="fixed pt-8 px-4 ml-2 lg:px-8">
+            <Audio />
+          </nav>
+        {/* main page content */}
+      <div className="flex flex-col items-center self-center mt-24 mx-auto justify-center">
+         {/* logo & cloud */}
+      <div className="z-10 flex flex-col items-center -space-y-4 w-full max-w-md sm:w-9/12 lg:w-9/12 sm:max-w-xl">
       <Image
                 src={caption}
                 width={120}
+                height={120}
                 alt="caption cloud"
                 className="my-0 py-0"
               />
       <Image
                 src={daze}
                 width={155}
+                height={155}
                 alt="Picture of Daze logo"
                 className="my-0 py-0"
               />
       </div>
 
-
-      {/* <div className="w-80 h-86 absolute blur-lg"></div> */}
+          {/* buttons  */}
       <div className="z-10 flex flex-col gap-3 justify-between mt-8" >
+
         <Link href="https://st4slyblfx3.typeform.com/to/DK30NHwZ"> 
         <div className="relative flex items-center justify-center">
 
@@ -84,8 +122,12 @@ export default function Home() {
         
     </div>
 
+    {isLoading && (
+            <section id="loading-screen" className="visible" onTransitionEnd={onTransitionEnd}>
+                <div id="loader"></div>
+            </section>
+        )}
    <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
-      
       <video 
             autoPlay
             playsInline
@@ -98,8 +140,10 @@ export default function Home() {
             <source src="video.mp4" type="video/mp4"/>
 
       Your browser does not support the video tag.
-      </video>
-   </div>
+        </video>
+       </div>
+
+      </div>
   </main>
   );
 }
@@ -115,16 +159,16 @@ export default function Home() {
   // const randomImageSrc = getRandomImage();
   // const randomImageSrc2 = getRandomImage();
 
-      {/* <div className="fixed inset-y-3/4 lg:px-12 lg:mb-24 inset-x-1/4 w-48 lg:w-96">
-        <Image
-            src={randomImageSrc}
-            alt="Random Image"
-      />
-        </div>
+  {/* <div className="fixed inset-y-3/4 lg:px-12 lg:mb-24 inset-x-1/4 w-48 lg:w-96">
+    <Image
+        src={randomImageSrc}
+        alt="Random Image"
+  />
+    </div>
 
-      <div className="fixed inset-y-1/2 inset-x-1/2 lg:ml-12 w-24 lg:w-80">
-        <Image
-            src={randomImageSrc2}
-            alt="Random Image"
-      />
-        </div> */}
+  <div className="fixed inset-y-1/2 inset-x-1/2 lg:ml-12 w-24 lg:w-80">
+    <Image
+        src={randomImageSrc2}
+        alt="Random Image"
+  />
+    </div> */}

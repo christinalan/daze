@@ -5,11 +5,6 @@ import {useState, useEffect, useRef} from "react"
 import toggleOff from "../images/music_off.svg"
 import toggleOn from "../images/music_on.svg"
 
-interface Track {
-    file: string;
-    name: string;
-  }
-
 export const Audio = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [loaded, setLoaded] = useState(false);
@@ -17,13 +12,24 @@ export const Audio = () => {
 
     useEffect(() => {
         soundRef.current = new Howl({
+            preload: true,
             src: ['daze_ambient_score.mp3'],
             html5: true,
             onload: () => setLoaded(true),
+            onloaderror: (id, err) => console.error('Load Error:', err),
+            onplayerror: (id, err) => {
+                console.error('Play Error:', err);
+                soundRef.current.once('unlock', () => {
+                soundRef.current.play();
+            });
+    },
             loop: true
         });
-        
-        soundRef.current.loop = true;
+
+        return () => {
+            console.log("Unloading Howl");
+            soundRef.current.unload();
+        };
     }, []); 
 
 
@@ -36,7 +42,9 @@ export const Audio = () => {
             soundRef.current.play();
         } else {
             soundRef.current.fade(1, 0, 2000);
-            // soundRef.current.pause();
+            setTimeout(() => {
+                soundRef.current.pause();
+            }, 2000)
         }
     }
 
@@ -48,20 +56,15 @@ export const Audio = () => {
             <Image
                 src={toggleOff}
                 alt="toggle off icon"
-                sizes="100vw"
-                style={{
-                    objectFit: 'contain',
-                }}
+                // style={{
+                //     objectFit: 'contain',
+                // }}
                 width={40}
                 height={40}
                 /> : 
             <Image
                 src={toggleOn}
                 alt="toggle on icon"
-                sizes="100vw"
-                style={{
-                    objectFit: 'contain',
-                }}
                 width={40}
                 height={40}
                 />

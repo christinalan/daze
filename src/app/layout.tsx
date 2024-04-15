@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local"
-import Background from '../app/background/page';
 
 const circularMedium = localFont({
   src: '../fonts/CircularXXTT-Medium.ttf',

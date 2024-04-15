@@ -1,0 +1,80 @@
+$darkNavy3: #010818;
+$deepPurple: #331d97;
+$orange: #ffa464;
+$beige: #fdf3c9;
+$blue: #3272d9;
+
+section#loading-screen {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    background: purple;
+    background-color: rgba($darkNavy3, 0.9);
+    transition: 1s opacity;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    transition: 1s opacity;
+    opacity: 1;
+    pointer-events: none;
+  }
+  
+  #loading-screen.fade-out {
+    opacity: 0;
+  }
+  
+  #loader {
+    --clock-color: $beige;
+    --clock-width: 4rem;
+    --clock-radius: calc(var(--clock-width) / 2);
+    --clock-minute-length: calc(var(--clock-width) * 0.4);
+    --clock-hour-length: calc(var(--clock-width) * 0.2);
+    --clock-thickness: 0.3rem;
+  
+    position: absolute;
+    left: calc(50% - var(--clock-radius));
+    top: calc(50% - var(--clock-width));
+    z-index: 99999;
+  
+    justify-content: center;
+    align-items: center;
+    width: var(--clock-width);
+    height: var(--clock-width);
+    border: 0px solid $deepPurple;
+    border-radius: 50%;
+  
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      left: calc(var(--clock-radius) * 1);
+      top: calc(var(--clock-radius) * 0.25);
+      width: var(--clock-thickness);
+      background: $blue;
+      border-radius: 10px;
+      transform-origin: center calc(100% - calc(var(--clock-thickness) / 2));
+      animation: spin infinite linear;
+    }
+  
+    &::before {
+      height: var(--clock-minute-length);
+      animation-duration: 2s;
+    }
+  
+    &::after {
+      top: calc(var(--clock-radius) * 0.25 + var(--clock-hour-length));
+      height: var(--clock-hour-length);
+      animation-duration: 15s;
+    }
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  
