@@ -113,7 +113,7 @@ export default function Home() {
             />
         </div>
         </Link> 
-        <Link href="https://discord.gg/s4Bb2dDr">
+        <Link href="https://discord.gg/Z4dWvVARxh">
         <div className="relative flex items-center justify-center">
 
           <p className="absolute mx-auto -mt-1 text-slate-100 text-lg">Join our Discord</p>
