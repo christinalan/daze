@@ -19,12 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    (<div>Under maintenance</div>)
-    // <html lang="en">
-    //   <body className={circularMedium.className}>
-    //     {/* <Background /> */}
-    //     {children}
-    //     </body>
-    // </html>
+ 
+    <html lang="en">
+      <body className={circularMedium.className}>
+        {/* <Background /> */}
+        {children}
+        </body>
+    </html>
   );
 }
