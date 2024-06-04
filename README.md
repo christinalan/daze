@@ -1,4 +1,4 @@
 
 ## Getting Started
 
-Landing page for Daze
+Landing page for Daze Chat
