@@ -61,15 +61,15 @@ export const Video: React.FC<VideoProps> = ({containerId, homeClicked}) => {
             ref={videoRef} 
             autoPlay
             playsInline
-            controls={false}
-            muted={true}
+            muted
             loop
+            controls={false}
             placeholder="blur"
             poster="poster-min.png"
             className="fixed object-cover w-full h-full">
-            <source src="video.mp4" type="video/mp4"/>
+                <source src="video.mp4" type="video/mp4"/>
 
-            Your browser does not support the video tag.
+                Your browser does not support the video tag.
             </video>
 
         </>
