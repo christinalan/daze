@@ -59,7 +59,7 @@ export const Video: React.FC<VideoProps> = ({containerId, homeClicked}) => {
             onClick={playVideo}
             onTouchStart={playVideo}
             ref={videoRef} 
-            // autoPlay
+            autoPlay
             playsInline
             controls={false}
             muted={true}
