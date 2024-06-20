@@ -7,11 +7,11 @@ import daze from "../images/daze.webp";
 import button1 from '../images/button1.webp'
 import button2 from '../images/button2.webp'
 import button3 from '../images/button3.webp'
-import apple from '../images/apple.svg'
-import android from '../images/android.svg'
-import ig from '../images/ig.svg'
-import discord from '../images/discord.svg'
-import tiktok from '../images/tiktok.svg'
+import apple from '../images/apple_new.svg'
+import android from '../images/android_new.svg'
+import ig from '../images/instagram_new.svg'
+import discord from '../images/discord_new.svg'
+import tiktok from '../images/tiktok_new.svg'
 import { Audio } from './sound'
 import { Video } from './video'
 import './style/style.scss'
@@ -90,17 +90,18 @@ export default function Home() {
       <div className="z-10 flex flex-col gap-3 justify-between mt-8" >
 
         <Link href="https://apps.apple.com/us/app/daze-freeform-chat/id6497405419"> 
+        
         <div className="relative flex items-center justify-center">
 
-      
-          <div className="flex flex-row gap-3 items-end absolute mx-auto ">
+          <div className="flex flex-row gap-3 items-center -mt-1 absolute mx-auto ">
           <Image
                     src={apple}
-                    width={23}
+                    width={20}
                     alt="button 1"
                     priority={true}
+                    className="drop-shadow-md"
                   />
-          <p className="-mt-1 text-white text-lg">Download for iPhone</p>
+          <p className="text-white text-lg">Apple waitlist</p>
         </div>
     
            <Image
@@ -118,14 +119,15 @@ export default function Home() {
           
         <div className="relative flex items-center justify-center">
 
-        <div className="flex flex-row gap-3 items-end absolute mx-auto ">
+        <div className="flex flex-row gap-3 items-center -mt-1 absolute mx-auto ">
         <Image
                     src={android}
-                    width={23}
+                    width={20}
                     alt="button 1"
                     priority={true}
+                    className="drop-shadow-lg"
                   />
-        <p className="-mt-1 text-white text-lg">Download for Android</p>
+        <p className="text-white text-lg">Android waitlist</p>
         </div>
         <Image
               src={button2}
@@ -133,7 +135,7 @@ export default function Home() {
               style={{mixBlendMode: 'soft-light'}}
               alt="button 1"
               priority={true}
-              className="my-0 py-0 opacity-65"
+              className="my-0 py-0 opacity-65 drop-shadow-lg"
             />
         </div>
         </Link> 
@@ -143,7 +145,7 @@ export default function Home() {
         
         <div className="relative flex items-center justify-center">
 
-        <div className="flex z-10 flex-row self-center gap-16 absolute mx-auto ">
+        <div className="flex z-10 flex-row justify-center items-center gap-16 absolute mx-auto ">
         <Link href="https://www.instagram.com/daze.chat/">
 
                <Image
@@ -151,6 +153,7 @@ export default function Home() {
                     width={25}
                     alt="ig button"
                     priority={true}
+                    className="drop-shadow-lg"
                   />
 
                
@@ -161,6 +164,7 @@ export default function Home() {
                     width={25}
                     alt="discord button"
                     priority={true}
+                    className="mx-2 drop-shadow-lg"
                   />
             </Link>
             <Link href="https://www.tiktok.com/@daze.chat">
@@ -169,6 +173,7 @@ export default function Home() {
                     width={25}
                     alt="tiktok button"
                     priority={true}
+                    className="drop-shadow-lg"
                   />
             </Link> 
           </div>
