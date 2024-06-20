@@ -7,6 +7,11 @@ import daze from "../images/daze.webp";
 import button1 from '../images/button1.webp'
 import button2 from '../images/button2.webp'
 import button3 from '../images/button3.webp'
+import apple from '../images/apple.svg'
+import android from '../images/android.svg'
+import ig from '../images/ig.svg'
+import discord from '../images/discord.svg'
+import tiktok from '../images/tiktok.svg'
 import { Audio } from './sound'
 import { Video } from './video'
 import './style/style.scss'
@@ -84,10 +89,20 @@ export default function Home() {
           {/* buttons  */}
       <div className="z-10 flex flex-col gap-3 justify-between mt-8" >
 
-        <Link href="https://st4slyblfx3.typeform.com/to/DK30NHwZ"> 
+        <Link href="https://apps.apple.com/us/app/daze-freeform-chat/id6497405419"> 
         <div className="relative flex items-center justify-center">
 
-          <p className="absolute mx-auto -mt-1 text-slate-100 text-lg">Get on the waitlist</p>
+      
+          <div className="flex flex-row gap-3 items-end absolute mx-auto ">
+          <Image
+                    src={apple}
+                    width={23}
+                    alt="button 1"
+                    priority={true}
+                  />
+          <p className="-mt-1 text-white text-lg">Download for iPhone</p>
+        </div>
+    
            <Image
                 src={button1}
                 width={315}
@@ -98,11 +113,20 @@ export default function Home() {
               />
         </div>
         </Link>
-        <Link href="https://www.instagram.com/daze.chat/">
+
+        <Link href="https://st4slyblfx3.typeform.com/to/DK30NHwZ?typeform-source=daze.chat">
           
         <div className="relative flex items-center justify-center">
 
-        <p className="absolute mx-auto -mt-1 text-slate-100 text-lg">Follow us on Instagram</p>
+        <div className="flex flex-row gap-3 items-end absolute mx-auto ">
+        <Image
+                    src={android}
+                    width={23}
+                    alt="button 1"
+                    priority={true}
+                  />
+        <p className="-mt-1 text-white text-lg">Download for Android</p>
+        </div>
         <Image
               src={button2}
               width={315}
@@ -113,22 +137,56 @@ export default function Home() {
             />
         </div>
         </Link> 
-        <Link href="https://discord.gg/Z4dWvVARxh">
+
+        {/* 3 buttons for socials */}
+    <div className="flex flex-row">
+        
         <div className="relative flex items-center justify-center">
 
-          <p className="absolute mx-auto -mt-1 text-slate-100 text-lg">Join our Discord</p>
+        <div className="flex z-10 flex-row self-center gap-16 absolute mx-auto ">
+        <Link href="https://www.instagram.com/daze.chat/">
+
+               <Image
+                    src={ig}
+                    width={25}
+                    alt="ig button"
+                    priority={true}
+                  />
+
+               
+            </Link>
+          <Link href="https://discord.com/invite/Z4dWvVARxh">
+                <Image
+                    src={discord}
+                    width={25}
+                    alt="discord button"
+                    priority={true}
+                  />
+            </Link>
+            <Link href="https://www.tiktok.com/@daze.chat">
+                <Image
+                    src={tiktok}
+                    width={25}
+                    alt="tiktok button"
+                    priority={true}
+                  />
+            </Link> 
+          </div>
+
           <Image
                 src={button3}
-                width={310}
+                width={315}
                 style={{mixBlendMode: 'soft-light'}}
                 alt="button 1"
                 priority={true}
                 className="my-0 py-0 mix-blend-soft-light opacity-70"
               />
+
           </div>
             {/* <div className="bg-[#4E7BC9] text-slate-100 bg-opacity-60 px-12 py-3 rounded-3xl shadow-lg flex justify-center cursor-pointer">
             </div> */}
-      </Link>
+      </div>
+
       </div>
         
     </div>
