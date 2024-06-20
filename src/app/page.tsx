@@ -7,11 +7,11 @@ import daze from "../images/daze.webp";
 import button1 from '../images/button1.webp'
 import button2 from '../images/button2.webp'
 import button3 from '../images/button3.webp'
-import apple from '../images/apple_new.svg'
-import android from '../images/android_new.svg'
-import ig from '../images/instagram_new.svg'
-import discord from '../images/discord_new.svg'
-import tiktok from '../images/tiktok_new.svg'
+import apple from '../images/apple.svg'
+import android from '../images/android.svg'
+import ig from '../images/instagram.svg'
+import discord from '../images/discord.svg'
+import tiktok from '../images/tiktok.svg'
 import { Audio } from './sound'
 import { Video } from './video'
 import './style/style.scss'
@@ -135,7 +135,7 @@ export default function Home() {
               style={{mixBlendMode: 'soft-light'}}
               alt="button 1"
               priority={true}
-              className="my-0 py-0 opacity-65 drop-shadow-lg"
+              className="my-0 py-0 mix-blend-overlay opacity-65"
             />
         </div>
         </Link> 
