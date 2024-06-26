@@ -10,7 +10,7 @@ const circularMedium = localFont({
 
 export const metadata: Metadata = {
   title: "Daze",
-  description: "Join the waiting list landing page",
+  description: "Daze - Join the waiting list!",
 };
 
 export default function RootLayout({
