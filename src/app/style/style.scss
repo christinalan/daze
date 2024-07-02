@@ -1,1 +1,44 @@
 @import "loader";
+
+
+#waitlist-form {
+    color: black;
+
+    .gw-mt-2 > :first-child {
+        display: none;
+    }
+
+    input, button {
+        font-weight: bold;
+        text-align: center;
+        color: black;
+        background:#7291C780;// #4E6CA175;
+        font-size: 21px;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        font-weight: bold !important;
+        border: none;
+        outline: none;
+    }
+
+    .gw-rounded-md:not(.gw-p-7) {
+        border-radius: 20px;
+        background-color: #7291C775 !important;
+    }
+
+    #primaryCTA {
+        background: #7291C7AA !important;
+    }
+
+    .gw-p-7 {
+        padding-top: 0;
+    }
+
+    .gw-mt-4.gw-text-sm {
+        font-size: 1.1rem !important;
+    }
+
+    .gw-flex.gw-flex-col.gw-w-full.gw-mx-auto  {
+        zoom: 1.1
+    }
+}
