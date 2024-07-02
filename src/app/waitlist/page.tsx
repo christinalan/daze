@@ -1,20 +1,11 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import caption from "../../images/caption.webp";
 import daze from "../../images/daze.webp";
-import button1 from "../../images/button1.webp";
-import button2 from "../../images/button2.webp";
-import button3 from "../../images/button3.webp";
-import apple from "../../images/apple.svg";
-import android from "../../images/android.svg";
-import ig from "../../images/instagram.svg";
-import discord from "../../images/discord.svg";
-import tiktok from "../../images/tiktok.svg";
 import { Audio } from "../sound";
-import { Video } from "../video";
 import "../style/style.scss";
+import { Video } from "../video";
 
 export default function WaitList() {
   const [isLoading, setIsLoading] = useState(true);
@@ -75,20 +66,6 @@ export default function WaitList() {
     script.src =
       "https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js";
     container.appendChild(script);
-
-    // container.innerHTML = `
-
-    //     <link
-    //       rel="stylesheet"
-    //       type="text/css"
-    //       href="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.css"
-    //     />
-    //     <script
-    //       async
-    //       src="https://prod-waitlist-widget.s3.us-east-2.amazonaws.com/getwaitlist.min.js"
-    //     ></script>
-
-    //     `;
   }, []);
 
   return (
@@ -130,7 +107,8 @@ export default function WaitList() {
             className="z-10 flex flex-col gap-3 justify-between mt-8"
             style={{
               display: "flex",
-              minWidth: "500px",
+              minWidth: "320px",
+              maxWidth: "95vw",
               justifyContent: "center",
             }}
           >
