@@ -93,17 +93,10 @@ export default function Home() {
 
           {/* buttons  */}
           <div className="z-10 flex flex-col gap-3 justify-between mt-8">
-            <Link href="https://apps.apple.com/us/app/daze-freeform-chat/id6497405419">
+            <Link href="./waitlist">
               <div className="relative flex items-center justify-center">
                 <div className="flex flex-row gap-3 items-center -mt-1 absolute mx-auto ">
-                  <Image
-                    src={apple}
-                    width={20}
-                    alt="button 1"
-                    priority={true}
-                    className="drop-shadow-md"
-                  />
-                  <p className="text-white text-lg">Apple waitlist</p>
+                  <p className="text-white text-lg">Get on the waitlist</p>
                 </div>
 
                 <Image
@@ -117,17 +110,10 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="https://st4slyblfx3.typeform.com/to/DK30NHwZ?typeform-source=daze.chat">
+            <Link href="https://discord.com/invite/Z4dWvVARxh">
               <div className="relative flex items-center justify-center">
                 <div className="flex flex-row gap-3 items-center -mt-1 absolute mx-auto ">
-                  <Image
-                    src={android}
-                    width={20}
-                    alt="button 1"
-                    priority={true}
-                    className="drop-shadow-lg"
-                  />
-                  <p className="text-white text-lg">Android waitlist</p>
+                  <p className="text-white text-lg">Join our Discord</p>
                 </div>
                 <Image
                   src={button2}
@@ -139,52 +125,6 @@ export default function Home() {
                 />
               </div>
             </Link>
-
-            {/* 3 buttons for socials */}
-            <div className="flex flex-row">
-              <div className="relative flex items-center justify-center">
-                <div className="flex z-10 flex-row justify-center items-center gap-16 absolute mx-auto ">
-                  <Link href="https://www.instagram.com/daze.chat/">
-                    <Image
-                      src={ig}
-                      width={25}
-                      alt="ig button"
-                      priority={true}
-                      className="drop-shadow-lg"
-                    />
-                  </Link>
-                  <Link href="https://discord.com/invite/Z4dWvVARxh">
-                    <Image
-                      src={discord}
-                      width={25}
-                      alt="discord button"
-                      priority={true}
-                      className="mx-2 drop-shadow-lg"
-                    />
-                  </Link>
-                  <Link href="https://www.tiktok.com/@daze.chat">
-                    <Image
-                      src={tiktok}
-                      width={25}
-                      alt="tiktok button"
-                      priority={true}
-                      className="drop-shadow-lg"
-                    />
-                  </Link>
-                </div>
-
-                <Image
-                  src={button3}
-                  width={315}
-                  style={{ mixBlendMode: "soft-light" }}
-                  alt="button 1"
-                  priority={true}
-                  className="my-0 py-0 mix-blend-soft-light opacity-70"
-                />
-              </div>
-              {/* <div className="bg-[#4E7BC9] text-slate-100 bg-opacity-60 px-12 py-3 rounded-3xl shadow-lg flex justify-center cursor-pointer">
-            </div> */}
-            </div>
           </div>
         </div>
         <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
