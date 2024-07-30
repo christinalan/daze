@@ -110,7 +110,7 @@ export default function Beta() {
             </div>
             </div>
 
-            <div className="relative z-10 flex flex-col justify-center items-center mt-8 mb-0 py-4 px-8">
+            {/* <div className="relative z-10 flex flex-col justify-center items-center mt-8 mb-0 py-4 px-8">
             <div className="absolute inset-0 bg-white opacity-10 rounded-3xl drop-shadow-lg"></div>
             <div className="relative z-20 flex flex-col justify-center items-center">
                 <Image
@@ -131,7 +131,7 @@ export default function Beta() {
                 </button>
                 </div>
             </div>
-            </div>
+            </div> */}
 
             <div className="relative z-10 flex flex-col justify-center items-center mt-8 mb-0 py-4 px-8">
             <div className="absolute inset-0 bg-white opacity-10 rounded-3xl drop-shadow-lg"></div>
@@ -144,7 +144,7 @@ export default function Beta() {
                 className="my-0 py-0"
                 />
                 <div className="text-center text-white pt-0">
-                <div className="font-large text-[25px]">Step 5</div>
+                <div className="font-large text-[25px]">Step 4</div>
                 <div className="font-medium text-[21px]">Exclusive Beta discord</div>
                 <div className="font-medium text-[18px] opacity-50 w-[290px]">
                 Only beta users are in this discord channel! Give us feedback + talk about ideas with the Daze team!
