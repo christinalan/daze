@@ -34,7 +34,7 @@ export default function Beta() {
             />
           </div>
           <div className="mt-2 w-[220px] h-[58px] text-white text-[20px] text-center font-medium">
-            Congrats! You're in the 1st group of Beta users!
+            Congrats! You’re in the 1st group of Beta users!
           </div>
 
           {/* buttons  */}
