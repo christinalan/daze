@@ -58,6 +58,7 @@ export default function Home() {
     // console.log("Main container was clicked");
     setClicked(true);
   };
+  
   return (
     <main
       id={containerId}
@@ -127,6 +128,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        
         <div className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
           {isLoading && (
             <section
