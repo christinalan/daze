@@ -11,13 +11,13 @@ import testflight from "../../../images/testflight.png";
 
 export const runtime = "edge";
 
-const API_ROOT = process.env.API_ROOT;
+const API_URL = process.env.API_URL;
 const TESTFLIGHT_URL = process.env.TESTFLIGHT_URL!;
 
 async function getData(code: string): Promise<boolean> {
-    if (!API_ROOT) throw new Error("API_ROOT is not defined");
+    if (!API_URL) throw new Error("API_URL is not defined");
 
-    const res = await fetch(`${API_ROOT}/referrals/${code}`);
+    const res = await fetch(`${API_URL}/referrals/${code}`);
     if (!res.ok) throw new Error("Failed to fetch data");
 
     return res.json().then(({ result }) => result?.data);
@@ -26,7 +26,7 @@ async function getData(code: string): Promise<boolean> {
 export default async function Beta({ params: { code } }: { params: { code: string } }) {
     const isValid = typeof code === "string" ? await getData(code) : false;
 
-    console.log({ API_ROOT, TESTFLIGHT_URL, code });
+    console.log({ API_URL, TESTFLIGHT_URL, code });
 
     if (!isValid) {
         notFound();

@@ -3,7 +3,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        API_ROOT: "http://0.0.0.0:8787",
+        API_URL: "http://0.0.0.0:8787",
         // doesn't work
         TESTFLIGHT_URL: "https://testflight.apple.com/join/3J8k9Z5g",
     },
