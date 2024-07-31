@@ -1,6 +1,5 @@
 @import "loader";
 
-
 #waitlist-form {
     color: black;
 
@@ -8,11 +7,12 @@
         display: none;
     }
 
-    input, button {
+    input,
+    button {
         font-weight: bold;
         text-align: center;
         color: black;
-        background:#7291C780;// #4E6CA175;
+        background: #7291c780; // #4E6CA175;
         font-size: 21px;
         border-radius: 20px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -23,11 +23,11 @@
 
     .gw-rounded-md:not(.gw-p-7) {
         border-radius: 20px;
-        background-color: #7291C775 !important;
+        background-color: #7291c775 !important;
     }
 
     #primaryCTA {
-        background: #7291C7AA !important;
+        background: #7291c7aa !important;
     }
 
     .gw-p-7 {
@@ -38,13 +38,13 @@
         font-size: 1.1rem !important;
     }
 
-    .gw-flex.gw-flex-col.gw-w-full.gw-mx-auto  {
-        zoom: 1.1
+    .gw-flex.gw-flex-col.gw-w-full.gw-mx-auto {
+        zoom: 1.1;
     }
 
     .gw-mr-2.gw-self-center {
         font-size: 1rem;
-        font-weight: bold;;
+        font-weight: bold;
     }
 
     .gw-mt-4.gw-text-center.gw-flex.gw-flex-col.gw-text-sm {
