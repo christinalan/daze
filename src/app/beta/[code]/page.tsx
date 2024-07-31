@@ -14,6 +14,8 @@ export const runtime = "edge";
 const API_URL = process.env.API_URL;
 const TESTFLIGHT_URL = process.env.TESTFLIGHT_URL!;
 
+const DEBUG = true;
+
 async function getData(code: string): Promise<boolean> {
     if (!API_URL) throw new Error("API_URL is not defined");
 
@@ -24,7 +26,9 @@ async function getData(code: string): Promise<boolean> {
 }
 
 export default async function Beta({ params: { code } }: { params: { code: string } }) {
-    const isValid = typeof code === "string" ? await getData(code) : false;
+    const isValid = Promise.resolve(
+        DEBUG ? true : typeof code === "string" ? await getData(code) : false
+    );
 
     console.log({ API_URL, TESTFLIGHT_URL, code });
 
