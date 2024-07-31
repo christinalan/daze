@@ -8,6 +8,7 @@ import daze_icon from "../../../images/daze_icon.png";
 import discord from "../../../images/discord.svg";
 import send from "../../../images/send.png";
 import testflight from "../../../images/testflight.png";
+import { CopyToClipboardButton } from "./ClientButton";
 
 export const runtime = "edge";
 
@@ -103,7 +104,7 @@ export default async function Beta({ params: { code } }: { params: { code: strin
                             <div className="font-medium text-[18px] opacity-50 w-[290px]">
                                 When signing up you will need to input this referral code:
                             </div>
-                            <div className="font-large text-[40px]">{code}</div>
+                            <CopyToClipboardButton className="font-large text-[40px]" text={code} />
                             <div className="font-medium opacity-50 text-[16px] -mt-2">
                                 (Tap to copy)
                             </div>
