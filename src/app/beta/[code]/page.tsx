@@ -30,8 +30,6 @@ export default async function Beta({ params: { code } }: { params: { code: strin
         DEBUG ? true : typeof code === "string" ? await getData(code) : false
     );
 
-    console.log({ API_URL, TESTFLIGHT_URL, code });
-
     if (!isValid) {
         notFound();
     }
