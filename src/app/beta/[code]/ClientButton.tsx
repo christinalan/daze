@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 export function ClientButton({
     onClick,
     children,
@@ -17,12 +19,19 @@ export function ClientButton({
 }
 
 export function CopyToClipboardButton({ text, className }: { text: string; className?: string }) {
+    const [didCopy, setDidCopy] = useState(false);
     function handleTapToCopy() {
-        navigator.clipboard.writeText(text);
+        navigator.clipboard.writeText(text).then((v) => {
+            setDidCopy(true);
+        });
     }
+    const label = didCopy ? "Copied!" : "Tap to copy";
     return (
-        <ClientButton className={className} onClick={handleTapToCopy}>
-            {text}
-        </ClientButton>
+        <>
+            <ClientButton className={className} onClick={handleTapToCopy}>
+                {text}
+            </ClientButton>
+            <div className="font-medium opacity-50 text-[16px] -mt-2">({label})</div>
+        </>
     );
 }

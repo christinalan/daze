@@ -105,9 +105,6 @@ export default async function Beta({ params: { code } }: { params: { code: strin
                                 When signing up you will need to input this referral code:
                             </div>
                             <CopyToClipboardButton className="font-large text-[40px]" text={code} />
-                            <div className="font-medium opacity-50 text-[16px] -mt-2">
-                                (Tap to copy)
-                            </div>
                             <Link href={TESTFLIGHT_URL}>
                                 <button className="mt-3 border-2 border-[1.5px] border-[#66BBFF] border-current rounded-[6.8px] px-4 py-1 text-[#66BBFF] text-[13px] inline-flex items-center">
                                     Start testing{" "}
