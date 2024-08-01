@@ -184,7 +184,7 @@ export default async function Beta({ params: { code } }: { params: { code: strin
                                 Only beta users are in this discord channel! Give us feedback + talk
                                 about ideas with the Daze team!
                             </div>
-                            <Link href="https://discord.com/invite/ez55EywxSD">
+                            <Link href="https://discord.com/invite/A3uX2vhtrT">
                                 <button className="mt-3 border-2 border-[1.5px] border-[#66BBFF] border-current rounded-[6.8px] px-4 py-1 text-[#66BBFF] text-[13px] inline-flex items-center">
                                     Join our Discord{" "}
                                     <Image src={arrow} alt="arrow" className="text-[10px] ml-1" />
