@@ -4,7 +4,7 @@
 const nextConfig = {
     env: {
         TESTFLIGHT_URL: "https://testflight.apple.com/join/vcUgtWTH",
-        GOOGLE_PLAY_URL: "https://play.google.com/store/apps/details?id=com.marblemedia.dazechat",
+        GOOGLE_PLAY_URL: "https://play.google.com/apps/testing/com.marblemedia.dazechat",
     },
     async headers() {
         return [
