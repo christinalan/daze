@@ -16,50 +16,18 @@ import { Audio } from "./sound";
 import { Video } from "./video";
 import { Menu } from "./menu"
 import "./style/style.scss";
+import localFont from "next/font/local";
+
+const circularMedium = localFont({
+    src: "../fonts/CircularXXTT-Medium.ttf",
+    display: "swap",
+});
 
 export default function Home() {
-    // const [isLoading, setIsLoading] = useState(true);
-    // const [loaded, setLoaded] = useState(false);
-    // const [clicked, setClicked] = useState(false);
-    // const containerId = "container";
     const [menuOpen, setMenuOpen] = useState(false); 
 
-    // useEffect(() => {
-    //     //to check if all assets on the page are loaded
-    //     const handleLoading = () => {
-    //         if (document.readyState === "complete") {
-    //             console.log("completely loaded assets");
-    //             setIsLoading(false);
-    //             setLoaded(true);
-    //         }
-    //     };
-    //     window.addEventListener("load", handleLoading);
-
-    //     const timer = setTimeout(() => {
-    //         setIsLoading(false);
-    //     }, 2000);
-
-    //     return () => {
-    //         window.removeEventListener("load", handleLoading);
-    //         clearTimeout(timer);
-    //     };
-    // }, [isLoading, loaded]);
-
-    // const onTransitionEnd = () => {
-    //     console.log("Transition ended");
-    //     const loadingScreen = document.getElementById("loading-screen") as HTMLElement;
-    //     if (!isLoading) {
-    //         loadingScreen.classList.add("fade-out");
-    //         loadingScreen.style.display = "none";
-    //     }
-    // };
-
-    // const handleMainClick = () => {
-    //     // console.log("Main container was clicked");
-    //     setClicked(true);
-    // };
-
     return (
+        <div className={circularMedium.className}>
             <div className="flex min-h-screen flex-col">
                 {/* For the sound toggle */}
                 <nav className="fixed w-full pt-8 px-4 ml-2 lg:px-8 flex justify-between items-center">
@@ -126,10 +94,9 @@ export default function Home() {
                             </Link>
                         </div>
                     </div>
-                )}
-    
-    
+                )}    
             </div>
+    </div>
 
     );
 }

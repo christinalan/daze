@@ -3,6 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import burger from "../images/burger.svg";
 import close from "../images/close.svg"
+import localFont from "next/font/local";
+
+const gtAlpine = localFont({
+    src: "../fonts/GT-Alpina/GT-Alpina-Standard-Medium-Trial.otf",
+    style: 'normal',
+})
 
 type MenuProps = {
     isOpen: boolean;
@@ -15,7 +21,7 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, setIsOpen }) => {
     };
 
     return (
-        <div>
+        <div className={gtAlpine.className}>
             {/* Conditionally render burger or close icon */}
             <span className="cursor-pointer">
             {!isOpen ? (
@@ -51,8 +57,10 @@ export const Menu: React.FC<MenuProps> = ({ isOpen, setIsOpen }) => {
                         <Link href="/investors" className="text-4xl drop-shadow-custom">
                             Investors
                         </Link>
-                        <a href="#hiring" className="text-4xl drop-shadow-custom">Hiring</a>
-                        <a href="#contact" className="text-4xl drop-shadow-custom">Contact Us</a>
+                        <a href="mailto:willem@daze.nyc" className="text-4xl drop-shadow-custom">Hiring</a>
+                        <Link href="https://www.figma.com/proto/WXYmQceDzIhLUpyP7Ltg0i/Senior-Software-Engineer?page-id=0%3A1&node-id=2-15&node-type=frame&viewport=628%2C1222%2C0.28&t=uWiR63SrRLH9AzJd-1&scaling=min-zoom&content-scaling=fixed" className="text-4xl drop-shadow-custom">
+                            Contact Us
+                        </Link>
                     </nav>
                 </div>
             )}

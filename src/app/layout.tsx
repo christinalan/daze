@@ -3,7 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import VideoLayout from "./VideoLayout"; 
 
-const circularMedium = localFont({
+export const circularMedium = localFont({
     src: "../fonts/CircularXXTT-Medium.ttf",
     display: "swap",
 });
@@ -21,10 +21,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head></head>
-            <body className={circularMedium.className}>
+            <body>
                 <VideoLayout>{children}</VideoLayout>
                 {/* {children} */}
             </body>
         </html>
     );
 }
+
+
+// className={circularMedium.className}

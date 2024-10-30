@@ -2,6 +2,17 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import back from "../../images/back.svg"
+import localFont from "next/font/local";
+
+const circularMedium = localFont({
+    src: "../../fonts/CircularXXTT-Medium.ttf",
+    display: "swap",
+});
+
+const gtAlpine = localFont({
+    src: "../../fonts/GT-Alpina/GT-Alpina-Standard-Medium-Trial.otf",
+    style: 'normal',
+})
 
 const Investors = () => {
     const investorNames = [
@@ -38,9 +49,9 @@ const Investors = () => {
             </Link>
             </nav>
             <div className="relative flex flex-col items-center justify-center min-h-screen text-white">
-                <div className="flex flex-col items-center space-y-4 text-center p-8 mt-0">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-custom">Investors</h1>
-                    <ul className="text-lg md:text-2xl space-y-4">
+                <div className="flex flex-col items-center space-y-4 text-center p-8 mt-2">
+                    <h1 className={`${gtAlpine} text-3xl md:text-4xl font-bold mb-4 drop-shadow-custom`}>Investors</h1>
+                    <ul className={`${circularMedium} text-lg md:text-xl space-y-4`}>
                         {investorNames.map((name, index) => (
                             <li key={index} className="hover:text-gray-300 transition-colors duration-300">
                                 {name}
