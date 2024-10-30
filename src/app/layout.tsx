@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import VideoLayout from "./VideoLayout"; 
 
 const circularMedium = localFont({
     src: "../fonts/CircularXXTT-Medium.ttf",
@@ -21,8 +22,8 @@ export default function RootLayout({
         <html lang="en">
             <head></head>
             <body className={circularMedium.className}>
-                {/* <Background /> */}
-                {children}
+                <VideoLayout>{children}</VideoLayout>
+                {/* {children} */}
             </body>
         </html>
     );

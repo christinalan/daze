@@ -65,9 +65,16 @@ export const Audio = () => {
                                 // }}
                                 width={40}
                                 height={40}
+                                priority={true}
                             />
                         ) : (
-                            <Image src={toggleOn} alt="toggle on icon" width={40} height={40} />
+                            <Image 
+                                src={toggleOn} 
+                                alt="toggle on icon" 
+                                width={40} 
+                                height={40} 
+                                priority={true}
+                            />
                         )}
                     </span>
                 )}

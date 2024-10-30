@@ -46,8 +46,7 @@ export const Video: React.FC<VideoProps> = ({ containerId, homeClicked }) => {
         setTimeout(() => {
             video.play();
         }, 0);
-        // const interval = setInterval(checkPlayback, 2000);
-        // return () => clearInterval(interval);
+   
     }, [homeClicked, isPlaying]);
 
     const playVideo = () => {

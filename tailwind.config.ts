@@ -15,6 +15,9 @@ const config: Config = {
                 "custom-radial":
                     "radial-gradient(338.22% 85.16% at 2.27% 14.84%, #3300FF 0%, #004C91 42.95%, #837812 100%)",
             },
+            dropShadow: {
+                'custom': '0 4px 10px rgba(255, 255, 255, 0.8)',  // Custom shadow with 80% opacity and 10px blur
+            }
         },
     },
     plugins: [],
